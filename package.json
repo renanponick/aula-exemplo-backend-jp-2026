@@ -1,0 +1,24 @@
+{
+  "name": "aula-exemplo-backend-jp-2026",
+  "version": "0.0.1",
+  "description": "Material das aulas do prof renan",
+  "homepage": "https://github.com/renanponick/aula-exemplo-backend-jp-2026#readme",
+  "bugs": {
+    "url": "https://github.com/renanponick/aula-exemplo-backend-jp-2026/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/renanponick/aula-exemplo-backend-jp-2026.git"
+  },
+  "license": "ISC",
+  "author": "Renan Ponick",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node index.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
