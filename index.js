@@ -1,19 +1,14 @@
-import express from 'express' // TYPE MODULE
-// const express = require("express") // Type common JS
+import express from 'express' 
 
-// inicializando o express - new 
 const app = express()
+app.use(express.json())
 
-// Exercicio 1
-app.get("/api/somar", (req, res) => {
-    const num1 = Number(req.query.num1)
-    const num2 = Number(req.query.num2)
-    // () = 99 % casos é funcao
-    // {} = objeto 
+app.post("/api/somar", (req, res) => {
+    const num1 = req.body.num1
+    const num2 = req.body.num2
     res.send({ resultado: num1 + num2 })
 })
 
-// Exercicio 2
 app.get("/api/salario/:valor/:hora", (req, res) => {
     const valorGanho = Number(req.params.valor)
     const horasTrabalhadas = Number(req.params.hora)
@@ -22,12 +17,6 @@ app.get("/api/salario/:valor/:hora", (req, res) => {
     res.send({ message: resultado })
 })
 
-
-//
-
-
-//
-
 app.listen(3000, () => {
-    console.log("Servidor rodando na porta 3000")
+    console.log("Servidor na porta 3000")
 })
