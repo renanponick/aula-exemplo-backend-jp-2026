@@ -1,7 +1,7 @@
 {
   "name": "aula-exemplo-backend-jp-2026",
-  "version": "0.0.1",
-  "description": "Material das aulas do prof renan",
+  "version": "1.0.0",
+  "description": "Crie um repositório novo no GitHub chamado APICalculadora utilizando a arquitetura REST\r Ela deve possuir as 4 operações básicas, assim como potência e raiz (Total: 6 operações);\r Realize também a separação adequada dos arquivos conforme vimos em aula.",
   "homepage": "https://github.com/renanponick/aula-exemplo-backend-jp-2026#readme",
   "bugs": {
     "url": "https://github.com/renanponick/aula-exemplo-backend-jp-2026/issues"
@@ -11,7 +11,7 @@
     "url": "git+https://github.com/renanponick/aula-exemplo-backend-jp-2026.git"
   },
   "license": "ISC",
-  "author": "Renan Ponick",
+  "author": "Renan",
   "type": "module",
   "main": "index.js",
   "scripts": {
