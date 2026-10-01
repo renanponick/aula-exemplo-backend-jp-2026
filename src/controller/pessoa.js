@@ -26,7 +26,8 @@ class ControllerPessoa {
     Criar(req, res) {
         try {
             const nome = req.body.nome
-            ServicePessoa.Criar(nome)
+            const idade = req.body.idade
+            ServicePessoa.Criar(nome, idade)
 
             res.send({ message: "Criado com sucesso!" })
         } catch (error) {

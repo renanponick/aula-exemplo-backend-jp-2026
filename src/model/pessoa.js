@@ -1,4 +1,17 @@
-const nomes = new Array("Ana", "Batata", "João")
+const nomes = new Array(
+    {
+        nome: "joao",
+        idade: 12
+    },
+    {
+        nome: "ana",
+        idade: 13
+    },
+    {
+        nome: "guto",
+        idade: 11
+    }
+)
 
 class Pessoa {
     Buscar() {
@@ -9,12 +22,13 @@ class Pessoa {
         return nomes[id]
     }
 
-    Criar(nome) {
-        nomes.push(nome)
+    Criar(nome, idade) {
+        nomes.push({nome, idade})
     }
 
-    Alterar(id, nome) {
-        nomes[id] = nome
+    Alterar(id, nome, idade) {
+        nomes[id].nome = nome
+        nomes[id].idade = idade
     }
 
     Deletar(id) {

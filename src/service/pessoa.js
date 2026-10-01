@@ -14,12 +14,12 @@ class ServicePessoa {
         return Pessoa.BuscarUm(id)
     }
     
-    Criar(nome) {
+    Criar(nome, idade) {
         if(!nome) {
             throw new Error("Favor informar o nome")
         }
         
-        Pessoa.Criar(nome)
+        Pessoa.Criar(nome, idade)
     }
     
     Alterar(id, nome) {
