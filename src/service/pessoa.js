@@ -2,8 +2,8 @@ import Pessoa from '../model/pessoa.js'
 
 class ServicePessoa {
 
-    Buscar() {
-        return Pessoa.Buscar()
+    async Buscar() {
+        return Pessoa.findAll()
     }
     
     BuscarUm(id) {
@@ -13,29 +13,41 @@ class ServicePessoa {
 
         return Pessoa.BuscarUm(id)
     }
-    
-    Criar(nome, idade) {
+    // service
+    async Criar(nome, idade) {
         if(!nome) {
             throw new Error("Favor informar o nome")
         }
         
-        Pessoa.Criar(nome, idade)
+        await Pessoa.create({ nome, idade })
     }
     
-    Alterar(id, nome) {
+    async Alterar(id, nome) {
         if(!id || isNaN(id) || !nome) {
             throw new Error("Favor informar todos os dados")
         }
-        
-        Pessoa.Alterar(id, nome)
+        const pessoaAlterar = await Pessoa.findByPk(id)
+
+        if(!pessoaAlterar) {
+            throw new Error("Pessoa não encontrada")
+        }
+
+        pessoaAlterar.nome = nome
+
+        await pessoaAlterar.save()
     }
 
-    Deletar(id) {
+    async Deletar(id) {
         if(!id || isNaN(id)) {
             throw new Error("Favor informar o Id corretamente")
         }
-        
-        Pessoa.Deletar(id)
+        const pessoaDelete = await Pessoa.findByPk(id)
+
+        if(!pessoaDelete) {
+            throw new Error("Favor informar o Id corretamente")
+        }
+
+        await pessoaDelete.destroy()
     }
     
 }
